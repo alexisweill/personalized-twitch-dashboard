@@ -8,7 +8,7 @@ const removeChannelAction = (channelId, channels) => async () => {
 
   const filteredChannels = channels.filter(channel => channel.id !== channelId)
   setChannels(filteredChannels)
-
+ 
   const joinedChannels = filteredChannels.map(channel => channel.display_name.toLowerCase()).join(',')
 
   await setDBChannels(joinedChannels)
